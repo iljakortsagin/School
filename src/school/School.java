@@ -5,6 +5,7 @@
  */
 package school;
 
+import classes.App;
 /**
  *
  * @author pupil
@@ -16,6 +17,10 @@ public class School {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        public static void main(String[] args) {
+        App app = new App();
+        app.run();
     }
     
 }
