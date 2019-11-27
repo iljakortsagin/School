@@ -31,5 +31,11 @@ public class App {
         listSubjects.addAll(saverToFile.loadListSubjects());
         listJournals.addAll(saverToFile.loadListJournals());
     }
+     
+     public void run() {
+        Scanner scanner = new Scanner(System.in);
+        String operation = "0";
+        boolean badOperation;
     
+}
 }
