@@ -37,7 +37,7 @@ public class Person {
         return firstname;
     }
 
-    public void setFirstame(String firstname) {
+    public void setFirstname(String firstname) {
         this.firstname = firstname;
     }
 

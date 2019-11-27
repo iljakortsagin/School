@@ -8,16 +8,13 @@ package classes;
 import entity.Person;
 import entity.Subject;
 import entity.Journal;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-import java.util.Scanner;
 /**
  *
  * @author pupil
  */
 public class App {
-    List<Person> listPersons;
+    /*List<Person> listPersons;
     List<Subject> listSubjects;
     List<Journal> listJournals;
     SaverToFile saverToFile;
@@ -30,12 +27,20 @@ public class App {
         listPersons.addAll(saverToFile.loadListPersons());
         listSubjects.addAll(saverToFile.loadListSubjects());
         listJournals.addAll(saverToFile.loadListJournals());
-    }
+    }*/
      
      public void run() {
-        Scanner scanner = new Scanner(System.in);
-        String operation = "0";
-        boolean badOperation;
+       Person person = new Person();
+        person.setId(1L);
+        person.setFirstname("Ilja");
+        person.setLastname("Kortsagin");
+        person.setStatus("Pupil");
+        System.out.println(person.getId());
+        System.out.println(person.getFirstname());
+        System.out.println(person.getLastname());
+        System.out.println(person.getStatus());
+        System.out.println("Вывод метода toString(): ");
+        System.out.println(person.toString());
     
 }
 }
