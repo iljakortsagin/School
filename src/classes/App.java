@@ -42,5 +42,7 @@ public class App {
         System.out.println("Вывод метода toString(): ");
         System.out.println(person.toString());
     
+        Subject subject = new Subject("Programming", 80, "J.Melnikov");
+        System.out.println(subject.toString());
 }
 }
