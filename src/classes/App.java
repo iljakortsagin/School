@@ -34,7 +34,7 @@ public class App {
         person.setId(1L);
         person.setFirstname("Ilja");
         person.setLastname("Kortsagin");
-        person.setStatus("Pupil");
+        person.setStatus("Student");
         System.out.println(person.getId());
         System.out.println(person.getFirstname());
         System.out.println(person.getLastname());
