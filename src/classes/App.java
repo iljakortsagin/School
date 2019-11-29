@@ -5,30 +5,100 @@
  */
 package classes;
 
+import buildings.JournalBuilding;
+import buildings.PersonBuilding;
+import buildings.SubjectBuilding;
 import entity.Person;
 import entity.Subject;
 import entity.Journal;
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 /**
  *
  * @author pupil
  */
 public class App {
-    /*List<Person> listPersons;
-    List<Subject> listSubjects;
-    List<Journal> listJournals;
-    SaverToFile saverToFile;
     
-     public App() {
-        listPersons = new ArrayList<>();
-        listSubjects = new ArrayList<>();
-        listJournals = new ArrayList<>();
-        saverToFile = new SaverToFile();
-        listPersons.addAll(saverToFile.loadListPersons());
-        listSubjects.addAll(saverToFile.loadListSubjects());
-        listJournals.addAll(saverToFile.loadListJournals());
-    }*/
-     
+    private final List<Journal> listJournal = new ArrayList<>();
+    private final List<Person> listPerson = new ArrayList<>();
+    private final List<Subject> listSubject = new ArrayList<>();
+    
+    public void run() {
+        
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("---- Школа ----");
+        String repeat = "r";
+        int operation;
+        do{
+            System.out.println("Выберите действие:");
+            System.out.println("1. Добавить субъект");
+            System.out.println("2. Выставить оценку");
+            System.out.println("3. Добавить предмет");
+            System.out.println("4. Список оценок");
+            System.out.println("5. Изменить оценку");
+            operation = scanner.nextInt();
+            scanner.nextLine();
+            switch (operation) {
+                case 1:
+                    
+                    PersonBuilding personBuilding = new PersonBuilding();
+                    listPerson.add(personBuilding.createPerson());
+                    //savable.savePerson(listPersons);
+                    for(int i=0; i < listPerson.size();i++){
+                       System.out.println(
+                            "Добавить субъект: " 
+                            + listPerson.get(i).getFirstname()
+                        ); 
+                    }
+                    break;
+                case 2:
+                    JournalBuilding journalBuilding = new JournalBuilding();
+                    listJournal.add(journalBuilding.createJournal(listPerson, listSubject ));
+                    //savable.saveJournal(listJournsl);
+                    for(int i=0; i < listJournal.size();i++){
+                       System.out.println(
+                               "Выставить оценку: " 
+                            + listJournal.get(i).getPerson()
+                        ); 
+                    }
+                    break;
+                case 3:
+                    //добавление предмета
+                    System.out.println("Добавить предмет: ");
+                    SubjectBuilding subjectBuilding = new SubjectBuilding();
+                    listSubject.add(subjectBuilding.createSubject(listSubject));
+                    //savable.saveSubject(listSubject);
+                    break;
+                case 4:
+                    
+                    for(int i=0;i<listJournal.size();i++){
+                        System.out.println(listJournal.get(i));
+                    }
+                    break; 
+                case 5:
+                    System.out.println("Изменить оценку: ");
+                    
+                    for(int i=0;i<listPerson.size();i++){
+                        
+                        System.out.println(listPerson.get(i));
+                        
+                    }
+                    break;
+                
+                default:
+                    System.out.println("Такое действие неподдерживается");
+                    continue;
+            }
+            System.out.println("Для продолжения программы");
+            System.out.println("введите \"r\"");
+            System.out.println("Для окончания \"q\"");
+            repeat = scanner.nextLine();
+        }while("r".equals(repeat));
+        System.out.println("Программа закрывается");
+    }
+    
+    /* 
      public void run() {
        Person person = new Person();
         person.setId(1L);
@@ -44,5 +114,5 @@ public class App {
     
         Subject subject = new Subject("Programming", 80, "J.Melnikov");
         System.out.println(subject.toString());
-}
+}*/
 }

@@ -20,7 +20,7 @@ import java.util.Scanner;
 public class JournalBuilding {
     
     private static final DateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-    private Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
     
     public Journal createJournal(List<Person> listPerson, List<Subject> listSubject) {    
     

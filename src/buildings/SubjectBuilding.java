@@ -6,6 +6,7 @@
 package buildings;
 
 import entity.Subject;
+import java.util.List;
 import java.util.Scanner;
 /**
  *
@@ -30,5 +31,13 @@ public class SubjectBuilding {
         
         return subject;
     
+    }
+
+    /*public Subject createSubject(List<Subject> listSubject) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }*/
+
+    public Subject createSubject(List<Subject> listSubject) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
