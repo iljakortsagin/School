@@ -33,10 +33,11 @@ public class App {
         do{
             System.out.println("Выберите действие:");
             System.out.println("1. Добавить субъект");
-            System.out.println("2. Выставить оценку");
-            System.out.println("3. Добавить предмет");
-            System.out.println("4. Список оценок");
-            System.out.println("5. Изменить оценку");
+            System.out.println("2. Добавить предмет");
+            System.out.println("3. Выставить оценку");
+            System.out.println("4. Изменить оценку");
+            System.out.println("5. Список оценок");
+            
             operation = scanner.nextInt();
             scanner.nextLine();
             switch (operation) {
@@ -56,6 +57,14 @@ public class App {
                     
                 case 2:
                     
+                    System.out.println("Добавить предмет: ");
+                    SubjectBuilding subjectBuilding = new SubjectBuilding();
+                    listSubject.add(subjectBuilding.createSubject());
+                    //savable.saveSubject(listSubject);
+                    break;    
+                    
+                case 3:
+                    
                     JournalBuilding journalBuilding = new JournalBuilding();
                     listJournal.add(journalBuilding.createJournal(listPerson, listSubject ));
                     //savable.saveJournal(listJournsl);
@@ -67,22 +76,7 @@ public class App {
                     }
                     break;
                     
-                case 3:
-                    
-                    System.out.println("Добавить предмет: ");
-                    SubjectBuilding subjectBuilding = new SubjectBuilding();
-                    listSubject.add(subjectBuilding.createSubject());
-                    //savable.saveSubject(listSubject);
-                    break;
-                    
                 case 4:
-                    
-                    for(int i=0;i<listJournal.size();i++){
-                        System.out.println(listJournal.get(i));
-                    }
-                    break;
-                    
-                case 5:
                     
                     System.out.println("Изменить оценку: ");
                     
@@ -92,6 +86,15 @@ public class App {
                         
                     }
                     break;
+                    
+                case 5:
+                    
+                    for(int i=0;i<listJournal.size();i++){
+                        System.out.println(listJournal.get(i));
+                    }
+                    break;
+                    
+                
                 
                 default:
                     System.out.println("Такое действие неподдерживается");
