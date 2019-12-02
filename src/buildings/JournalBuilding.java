@@ -29,11 +29,11 @@ public class JournalBuilding {
         System.out.println("Cпиок студентов: ");
         int n = 1;
         for (Person person : listPerson) {
-            
+            if("student".equals(person.getStatus())){
             System.out.print("Студент: "+n+". "+person.getFirstname()+" "+person.getLastname());
             n++;
         }
-        
+        }
         System.out.println("Cпиок предметов: ");
         n = 1;
         for (Subject subject : listSubject) {
@@ -41,14 +41,6 @@ public class JournalBuilding {
             n++;
         }
             
-        System.out.println("Список студентов:");
-            n=1;
-        for (Person person : listPerson){
-            if("student".equals(person.getStatus())){
-                System.out.print(n+". "+person.getFirstname()+" "+person.getLastname());
-            }
-            n++;
-        }
         System.out.println("Выберите студента:");
         int numStudent = (scanner.nextInt());
         journal.setPerson(listPerson.get(numStudent-1));
@@ -68,4 +60,6 @@ public class JournalBuilding {
          
         }
     
-}
+    }
+
+

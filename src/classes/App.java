@@ -97,15 +97,15 @@ public class App {
                 
                 
                 default:
-                    System.out.println("Такое действие неподдерживается");
+                    System.out.println("Такое действие не поддерживается");
                     continue;
             }
-            System.out.println("Для продолжения программы");
-            System.out.println("введите \"r\"");
-            System.out.println("Для окончания \"q\"");
+    
+            System.out.println("Для продолжения работы введите \"r\"");
+            System.out.println("Для завершения работы введите \"q\"");
             repeat = scanner.nextLine();
         }while("r".equals(repeat));
-        System.out.println("Программа закрывается");
+        System.out.println("Программа закончила работу");
     }
     
     /* 
