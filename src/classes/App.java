@@ -40,6 +40,7 @@ public class App {
             operation = scanner.nextInt();
             scanner.nextLine();
             switch (operation) {
+                
                 case 1:
                     
                     PersonBuilding personBuilding = new PersonBuilding();
@@ -52,7 +53,9 @@ public class App {
                         ); 
                     }
                     break;
+                    
                 case 2:
+                    
                     JournalBuilding journalBuilding = new JournalBuilding();
                     listJournal.add(journalBuilding.createJournal(listPerson, listSubject ));
                     //savable.saveJournal(listJournsl);
@@ -63,20 +66,24 @@ public class App {
                         ); 
                     }
                     break;
+                    
                 case 3:
-                    //добавление предмета
+                    
                     System.out.println("Добавить предмет: ");
                     SubjectBuilding subjectBuilding = new SubjectBuilding();
-                    listSubject.add(subjectBuilding.createSubject(listSubject));
+                    listSubject.add(subjectBuilding.createSubject());
                     //savable.saveSubject(listSubject);
                     break;
+                    
                 case 4:
                     
                     for(int i=0;i<listJournal.size();i++){
                         System.out.println(listJournal.get(i));
                     }
-                    break; 
+                    break;
+                    
                 case 5:
+                    
                     System.out.println("Изменить оценку: ");
                     
                     for(int i=0;i<listPerson.size();i++){

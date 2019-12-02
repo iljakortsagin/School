@@ -19,25 +19,16 @@ public class SubjectBuilding {
         Scanner scanner = new Scanner(System.in);
         System.out.println("-------Создание предмета--------");
         
-        int setID;
-            setID = (scanner.nextInt());
-        System.out.print("Имя предмета: ");
+        System.out.print("Название предмета: ");
         subject.setName(scanner.nextLine());
-        System.out.print("Количество часов: ");
-        int setHours;
-            setHours = (scanner.nextInt());
         System.out.print("Преподаватель: ");
         subject.setPerson(scanner.nextLine());
+        System.out.print("Количество часов: ");
+        subject.setHours(scanner.nextInt());
+        
         
         return subject;
     
-    }
+        }
 
-    /*public Subject createSubject(List<Subject> listSubject) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }*/
-
-    public Subject createSubject(List<Subject> listSubject) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
