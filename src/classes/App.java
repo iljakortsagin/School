@@ -20,13 +20,18 @@ import java.util.Scanner;
  */
 public class App {
     
-    private final List<Journal> listJournal = new ArrayList<>();
-    private final List<Person> listPerson = new ArrayList<>();
-    private final List<Subject> listSubject = new ArrayList<>();
+    Scanner scanner = new Scanner(System.in);
+    String operation = "0";
+    boolean badOperation;
+    List<Journal> listJournal = new ArrayList<>();
+    List<Person> listPerson = new ArrayList<>();
+    List<Subject> listSubject = new ArrayList<>();
+    
+    JournalBuilding journalBuilding = new JournalBuilding();
     
     public void run() {
         
-        Scanner scanner = new Scanner(System.in);
+        
         System.out.println("---- Школа ----");
         String repeat = "r";
         int operation;
@@ -64,8 +69,7 @@ public class App {
                     break;    
                     
                 case 3:
-                    
-                    JournalBuilding journalBuilding = new JournalBuilding();
+                   
                     listJournal.add(journalBuilding.createJournal(listPerson, listSubject ));
                     //savable.saveJournal(listJournsl);
                     for(int i=0; i < listJournal.size();i++){
@@ -78,13 +82,10 @@ public class App {
                     
                 case 4:
                     
+                    journalBuilding.correctJournal(listJournal);
+                    
                     System.out.println("Изменить оценку: ");
                     
-                    for(int i=0;i<listPerson.size();i++){
-                        
-                        System.out.println(listPerson.get(i));
-                        
-                    }
                     break;
                     
                 case 5:

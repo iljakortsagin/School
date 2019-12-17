@@ -25,31 +25,31 @@ public class JournalBuilding {
     public Journal createJournal(List<Person> listPerson, List<Subject> listSubject) {    
     
         Journal journal = new Journal();
-        System.out.println("-------Создание журнала--------");               
-        System.out.println("Cпиок студентов: ");
+        System.out.println("-------Журнал--------");               
+        System.out.println("Cпиcок студентов: ");
         int n = 1;
         for (Person person : listPerson) {
             if("student".equals(person.getStatus())){
-            System.out.print("Студент: "+n+". "+person.getFirstname()+" "+person.getLastname());
-            n++;
+            System.out.print("Студент: "+n+". "+person.getFirstname()+" "+person.getLastname()+"\n");
+           // n++;
         }
         }
-        System.out.println("Cпиок предметов: ");
+        System.out.println("Cпиcок предметов: ");
         n = 1;
         for (Subject subject : listSubject) {
-            System.out.print("Предмет: "+n+". "+subject.getName());
-            n++;
+            System.out.print("Предмет: "+n+". "+subject.getName()+"\n");
+           // n++;
         }
             
-        System.out.println("Выберите студента:");
+        System.out.println("Выберите студента: ");
         int numStudent = (scanner.nextInt());
         journal.setPerson(listPerson.get(numStudent-1));
         
-        System.out.print("Предмет: ");
+        System.out.print("Выберите предмет: "+"\n");
         int subjectNum = (scanner.nextInt());
         journal.setSubject(listSubject.get(subjectNum-1));
         
-        System.out.print("Оценка: ");
+        System.out.print("Оценка: "+"\n");
         int grade = scanner.nextInt();
         journal.setGrade(grade);
         
@@ -58,6 +58,31 @@ public class JournalBuilding {
         journal.setDate(date);
         return journal;
          
+        }
+    
+    /**
+     *
+     * @param journals
+     */
+    public void correctJournal(List<Journal> journals){
+        
+        System.out.println("------- Исправить оценку -------");
+        System.out.println("Список журналов:");
+            for(int i=0;i<journals.size();i++){
+                System.out.printf("%d. Название предмета: %s. Студент: %s %s. Оценка: %d%n"
+                        ,i+1
+                        ,journals.get(i).getSubject().getName()
+                        ,journals.get(i).getPerson().getFirstname()
+                        ,journals.get(i).getPerson().getLastname()
+                        ,journals.get(i).getGrade()
+                );
+            }  
+            System.out.print("Выберите номер журнала: ");
+            int numJournal = scanner.nextInt();
+            System.out.print("Изменить оценку на: ");
+            int newGrade = scanner.nextInt();
+            journals.get(numJournal-1).setGrade(newGrade);
+            
         }
     
     }
