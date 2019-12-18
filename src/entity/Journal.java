@@ -5,13 +5,14 @@
  */
 package entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  *
  * @author pupil
  */
-public class Journal {
+public class Journal implements Serializable{
     
     private Long id;
     private Person person;
@@ -72,6 +73,18 @@ public class Journal {
     @Override
     public String toString() {
         return "Journal{" + "id=" + id + ", person=" + person + ", subject=" + subject + ", Grade Value=" + grade + ", date=" + date + '}';
+    }
+
+    public Object getReturnDate() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setReturnDate(Date date) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Object getJournal() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

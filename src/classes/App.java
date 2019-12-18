@@ -23,6 +23,7 @@ public class App {
     private final List<Journal> listJournal = new ArrayList<>();
     private final List<Person> listPerson = new ArrayList<>();
     private final List<Subject> listSubject = new ArrayList<>();
+    private Object journal;
     
     public void run() {
         
@@ -68,7 +69,7 @@ public class App {
                     JournalBuilding journalBuilding = new JournalBuilding();
                     listJournal.add(journalBuilding.createJournal(listPerson, listSubject ));
                     //savable.saveJournal(listJournsl);
-                    for(int i=0; i < listJournal.size();i++){
+                    for(int i=0;i<listJournal.size();i++){
                        System.out.println(
                                "Выставить оценку: " 
                             + listJournal.get(i).getPerson()
@@ -80,8 +81,7 @@ public class App {
                     
                     System.out.println("Изменить оценку: ");
                     
-                    for(int i=0;i<listPerson.size();i++){
-                        
+                    for(int i=0;i<listPerson.size();i++){    
                         System.out.println(listPerson.get(i));
                         
                     }
