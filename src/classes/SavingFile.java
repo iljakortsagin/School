@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class SavingFile {
@@ -162,4 +163,16 @@ public class SavingFile {
         return listJournals;
     }
     
+    public List<Person> loadListPersons(){
+        return null;
+    }
+
+    public List<Subject> loadListSubjects(){
+        return null;
+    }
+    
+    public List<Journal> loadListJournals(){
+        return null;
+    }
+   
 }
