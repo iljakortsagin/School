@@ -33,11 +33,6 @@ public class JournalBuilding {
                    // ,listPersons.get(i).getStatus()
             );
         
-        /*int n = 1;
-        for (Person person : listPerson) {
-            if("student".equals(person.getStatus())){
-            System.out.print("Студент "+n+". "+person.getFirstname()+" "+person.getLastname()+ "\n");
-            n++;*/
         }
         System.out.println("Cписок предметов: ");
         
@@ -48,10 +43,6 @@ public class JournalBuilding {
                     ,listSubjects.get(i).getName()
             );
         
-        /*n = 1;
-        for (Subject subject : listSubject) {
-            System.out.print("Предмет "+n+". "+subject.getName()+ "\n");
-            n++;*/
         }
             
         System.out.println("Выберите студента:");
@@ -73,13 +64,6 @@ public class JournalBuilding {
        // journal.setDate(date);
         return journal;
 
-   /* public Journal createJournal() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void changeJournal(List<Journal> listJournals) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }*/
          
         }
     
@@ -116,15 +100,6 @@ public class JournalBuilding {
         
         
     }
-
-    /*public Journal changeJournal(List<Person> listPerson, List<Subject> listSubject) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }*/
-
-    /*public Journal createJournal() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }*/
-
     
     }
 
