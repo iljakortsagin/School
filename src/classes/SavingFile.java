@@ -163,16 +163,6 @@ public class SavingFile {
         return listJournals;
     }
     
-    public List<Person> loadListPersons(){
-        return null;
-    }
-
-    public List<Subject> loadListSubjects(){
-        return null;
-    }
     
-    public List<Journal> loadListJournals(){
-        return null;
-    }
    
 }

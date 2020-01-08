@@ -8,8 +8,6 @@ package buildings;
 import entity.Journal;
 import entity.Person;
 import entity.Subject;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
@@ -19,44 +17,69 @@ import java.util.Scanner;
  */
 public class JournalBuilding {
     
-    private static final DateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     private Journal journal = new Journal();
     private final Scanner scanner = new Scanner(System.in);
     
-    public Journal createJournal(List<Person> listPerson, List<Subject> listSubject) {    
+    public Journal createJournal(List<Person> listPersons, List<Subject> listSubjects) {    
     
         System.out.println("-------:Журнал--------");               
         System.out.println("Cписок студентов: ");
-        int n = 1;
+        
+        for(int i=0;i<listPersons.size();i++){
+            System.out.printf("%d. Имя: %s. Фамилия: %s%n"
+                    ,i+1
+                    ,listPersons.get(i).getFirstname()
+                    ,listPersons.get(i).getLastname()
+                   // ,listPersons.get(i).getStatus()
+            );
+        
+        /*int n = 1;
         for (Person person : listPerson) {
             if("student".equals(person.getStatus())){
             System.out.print("Студент "+n+". "+person.getFirstname()+" "+person.getLastname()+ "\n");
-            n++;
-        }
+            n++;*/
         }
         System.out.println("Cписок предметов: ");
-        n = 1;
+        
+        for(int i=0;i<listSubjects.size();i++){
+            System.out.printf("%d. %s %s%n"
+                    ,i+1
+                    ,listSubjects.get(i).getId()
+                    ,listSubjects.get(i).getName()
+            );
+        
+        /*n = 1;
         for (Subject subject : listSubject) {
             System.out.print("Предмет "+n+". "+subject.getName()+ "\n");
-            n++;
+            n++;*/
         }
             
         System.out.println("Выберите студента:");
         int numStudent = (scanner.nextInt());
-        journal.setPerson(listPerson.get(numStudent-1));
+        journal.setPerson(listPersons.get(numStudent-1));
         
         System.out.print("Предмет: ");
         int subjectNum = (scanner.nextInt());
-        journal.setSubject(listSubject.get(subjectNum-1));
+        journal.setSubject(listSubjects.get(subjectNum-1));
         
         System.out.print("Оценка: ");
         int grade = scanner.nextInt();
         journal.setGrade(grade);
         
-        Date date = new Date();
-        System.out.println(sdf.format(date));
-        journal.setDate(date);
+        journal.setDate(new Date());
+        
+       // Date date = new Date();
+       // System.out.println(sdf.format(date));
+       // journal.setDate(date);
         return journal;
+
+   /* public Journal createJournal() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void changeJournal(List<Journal> listJournals) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }*/
          
         }
     
@@ -94,13 +117,13 @@ public class JournalBuilding {
         
     }
 
-    public Journal changeJournal(List<Person> listPerson, List<Subject> listSubject) {
+    /*public Journal changeJournal(List<Person> listPerson, List<Subject> listSubject) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    }*/
 
-    public Journal createJournal() {
+    /*public Journal createJournal() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    }*/
 
     
     }
