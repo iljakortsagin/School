@@ -19,15 +19,17 @@ public class Journal implements Serializable{
     private Subject subject;
     private int grade;
     private Date date;
-
+    private Date changedate;
+    
     public Journal() {
     }
 
-    public Journal(Person person, Subject subject, int gradeValue, Date date) {
+    public Journal(Person person, Subject subject, int gradeValue, Date date, Date changedate) {
         this.person = person;
         this.subject = subject;
         this.grade = gradeValue;
         this.date = date;
+        this.changedate = changedate;
     }
 
     public Long getId() {
@@ -69,13 +71,44 @@ public class Journal implements Serializable{
     public void setDate(Date date) {
         this.date = date;
     }
+    
+    public Date getChangeDate() {
+        return changedate;
+    }
+
+    public void setChangeDate(Date changedate) {
+        this.changedate = changedate;
+    }
 
     @Override
     public String toString() {
-        return "Journal{" + "id=" + id + ", person=" + person + ", subject=" + subject + ", Grade Value=" + grade + ", date=" + date + '}';
+        
+        if(changedate == null){
+            return "Journal{" + "id=" + id 
+                + ", person=" + person.getFirstname()
+                + " " + person.getLastname()   
+                + ", subject=" + subject.getName()
+                + ", grade=" + grade
+                + ", date=" + date 
+                 
+                + '}';
+        }else{
+           return "Journal{" + "id=" + id 
+                + ", person=" + person.getFirstname()
+                + " " + person.getLastname()   
+                + ", subject=" + subject.getName()
+                + ", grade=" + grade
+                + ", date=" + date 
+                + ", changedate=" + changedate   
+                   
+                + '}';
+        }
+        
+        //return "Journal{" + "id=" + id + ", person=" + person + ", subject=" + subject + ", Grade Value=" + grade + ", date=" + date + '}';
+        
     }
 
-    public Object getReturnDate() {
+    /*public Object getReturnDate() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -85,6 +118,6 @@ public class Journal implements Serializable{
 
     public Object getJournal() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    }*/
     
 }

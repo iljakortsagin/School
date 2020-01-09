@@ -51,7 +51,7 @@ public class App {
                 System.out.println("5. Список оценок");
 
                 badOperation = false;
-                operation = scanner.next();
+                operation = scanner.nextLine();
                 switch (operation) {
                         case "0":
                             badOperation = false;
@@ -104,7 +104,7 @@ public class App {
 
                         journalBuilding.changeJournal(listJournals);
                         savingFile.saveJournals(listJournals);
-                        System.out.println("Оценка исправлена.");
+                        //System.out.println("Оценка исправлена.");
 
                         break;
 
