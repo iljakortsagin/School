@@ -71,48 +71,23 @@ public class JournalBuilding {
     public void changeJournal(List<Journal> journals){
         System.out.println("------- Исправить оценку -------");
         System.out.println("Список оценок:");
-        boolean flag = false;
         for(int i=0;i<journals.size();i++){
-            if(journals.get(i).getChangeDate() == null){
-                System.out.printf("%d. Предмет: %s. Студент: %s %s%n"
-                        ,i+1
-                        ,journals.get(i).getSubject().getName()
-                        ,journals.get(i).getPerson().getFirstname()
-                        ,journals.get(i).getPerson().getLastname()
-                       // ,journals.get(i).getJournal().getGrade()
-                );
-                flag = true;
-                
-            }if(journals.get(i).getChangeDate() != null){
-                System.out.printf("%d. Предмет: %s. Студент: %s %s%n"
-                        ,i+1
-                        ,journals.get(i).getSubject().getName()
-                        ,journals.get(i).getPerson().getFirstname()
-                        ,journals.get(i).getPerson().getLastname()
-                       // ,journals.get(i).getJournal().getGrade()
-                );
-                flag = true;
-            }
-            
+            System.out.printf("%d. Предмет: %s. Студент: %s %s. Оценка: %s%n"
+                    ,i+1
+                    ,journals.get(i).getSubject().getName()
+                    ,journals.get(i).getPerson().getFirstname()
+                    ,journals.get(i).getPerson().getLastname()
+                    ,journals.get(i).getGrade()
+            );
         }
-        
-        if(flag){
-            System.out.print("Выберите номер записи: ");
-            int numJournal = scanner.nextInt();
-            journals.get(numJournal - 1).setChangeDate(new Date());
-            
-            System.out.print("Оценка: ");
-            int grade = scanner.nextInt();
-            journal.setGrade(grade);
-            
-            
-            
-            System.out.println("Оценка изменена.");
-        }else{
-            System.out.println("Не удалось изменить оценку.");
-        }
-        
-        
+        System.out.print("Выберите номер записи: ");
+        int numJournal = scanner.nextInt();
+        System.out.print("Оценка: ");
+        int grade = scanner.nextInt();
+        scanner.nextLine();
+        journals.get(numJournal - 1).setGrade(grade);
+        journals.get(numJournal - 1).setChangeDate(new Date());
+        System.out.println("Оценка изменена.");
     }
     
     }
