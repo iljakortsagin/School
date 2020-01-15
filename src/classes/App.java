@@ -11,6 +11,7 @@ import buildings.SubjectBuilding;
 import entity.Person;
 import entity.Subject;
 import entity.Journal;
+import interfaces.Inclusive;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -24,9 +25,9 @@ public class App {
     List<Journal> listJournals = new ArrayList<>();
     SavingFile savingFile = new SavingFile();
     public App() {
-        listPersons.addAll(savingFile.loadPersons());
-        listSubjects.addAll(savingFile.loadSubjects());
-        listJournals.addAll(savingFile.loadJournals());
+        listPersons.addAll(savingFile.loadListPersons());
+        listSubjects.addAll(savingFile.loadListSubjects());
+        listJournals.addAll(savingFile.loadListJournals());
     }
     public void run() {
         Scanner scanner = new Scanner(System.in);

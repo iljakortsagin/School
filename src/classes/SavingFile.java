@@ -5,6 +5,7 @@ package classes;
 import entity.Person;
 import entity.Subject;
 import entity.Journal;
+import interfaces.Inclusive;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -15,13 +16,14 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class SavingFile {
+public class SavingFile implements Inclusive{
     
     private FileOutputStream fileOut = null;
     private ObjectOutputStream objOut = null;
     FileInputStream fileIn = null;
     ObjectInputStream objIn = null;
     
+    @Override
     public void savePersons(List<Person> listPersons){
         try {
             fileOut = new FileOutputStream("Persons.txt");
@@ -42,6 +44,7 @@ public class SavingFile {
         }
     }
     
+    @Override
     public void saveSubjects(List<Subject> listSubjects){
         try {
             fileOut = new FileOutputStream("Subjects.txt");
@@ -62,6 +65,7 @@ public class SavingFile {
         }
     }
     
+    @Override
     public void saveJournals(List<Journal> listJournals){
         try {
             fileOut = new FileOutputStream("Journals.txt");
@@ -82,7 +86,8 @@ public class SavingFile {
         }
     }
     
-    public List<Person> loadPersons(){
+    @Override
+    public List<Person> loadListPersons(){
         List<Person> listPersons = new ArrayList<>();
         try {
             fileIn = new FileInputStream("Persons.txt");
@@ -109,7 +114,8 @@ public class SavingFile {
         return listPersons;
     }
     
-    public List<Subject> loadSubjects(){
+    @Override
+    public List<Subject> loadListSubjects(){
         List<Subject> listSubjects = new ArrayList<>();
         try {
             fileIn = new FileInputStream("Subjects.txt");
@@ -136,7 +142,8 @@ public class SavingFile {
         return listSubjects;
     }
     
-    public List<Journal> loadJournals(){
+    @Override
+    public List<Journal> loadListJournals(){
         List<Journal> listJournals = new ArrayList<>();
         try {
             fileIn = new FileInputStream("Journals.txt");
