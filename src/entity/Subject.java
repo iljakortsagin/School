@@ -6,11 +6,13 @@
 package entity;
 
 import java.io.Serializable;
+import javax.persistence.Entity;
 
 /**
  *
  * @author pupil
  */
+@Entity
 public class Subject implements Serializable{
     
    private Long id;
