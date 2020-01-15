@@ -35,12 +35,15 @@ public class App {
         JournalBuilding journalBuilding = new JournalBuilding();
         do{
             System.out.println("Выберите действие:");
-            System.out.println("0. Выход");
-            System.out.println("1. Добавить субъект");
+            System.out.println("1. Добавить студента");
             System.out.println("2. Добавить предмет");
             System.out.println("3. Выставить оценку");
             System.out.println("4. Изменить оценку");
-            System.out.println("5. Список оценок");
+            System.out.println("5. Список студентов");
+            System.out.println("6. Список предметов");
+            System.out.println("7. Список оценок");
+            System.out.println("0. Выход");
+            
             repeat = true;
             operation = scanner.nextLine();
             switch (operation) {
@@ -86,16 +89,29 @@ public class App {
                     //System.out.println("Оценка исправлена.");
                     break;
                 case "5":
+                    System.out.println("---- Список студентов ----");
+                    for(Person prsn : listPersons){
+                        System.out.println(prsn.toString());
+                    } 
+                    break;
+                case "6":
+                    System.out.println("---- Список предметов ----");
+                    for(Subject sbjct : listSubjects){
+                        System.out.println(sbjct.toString());
+                    }
+                    break;      
+                case "7":
                     System.out.println("---- Список оценок ----");
                     for(Journal jrnl : listJournals){
                         System.out.println(jrnl.toString());
                     }
                     break;
-                 default:
+                
+                default:
                     System.out.println("Неправильная операция!");
                     System.out.println("Выберите правильную операцию");
                 }
-          }while(repeat);
+        }while(repeat);
 
-        }
+      }
     }
