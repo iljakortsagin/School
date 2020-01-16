@@ -23,11 +23,11 @@ public class App {
     List<Person> listPersons = new ArrayList<>();
     List<Subject> listSubjects = new ArrayList<>();
     List<Journal> listJournals = new ArrayList<>();
-    SavingFile savingFile = new SavingFile();
+    Inclusive inclusive = new SavingBase();
     public App() {
-        listPersons.addAll(savingFile.loadListPersons());
-        listSubjects.addAll(savingFile.loadListSubjects());
-        listJournals.addAll(savingFile.loadListJournals());
+        listPersons.addAll(inclusive.loadListPersons());
+        listSubjects.addAll(inclusive.loadListSubjects());
+        listJournals.addAll(inclusive.loadListJournals());
     }
     public void run() {
         Scanner scanner = new Scanner(System.in);
@@ -56,11 +56,11 @@ public class App {
                     Person person = personBuilding.createPerson();
 
                     if(person == null){
-                        System.out.println("Субъект создать не удалось.");
+                        System.out.println("Студента добавить не удалось.");
                     }else{
                         listPersons.add(person);
-                        savingFile.savePersons(listPersons);
-                        System.out.println("Добавлен новый субъект.");
+                        inclusive.savePersons(listPersons);
+                        System.out.println("Добавлен новый студент.");
                     }
                     break;
                 case "2":
@@ -70,7 +70,7 @@ public class App {
                         System.out.println("Предмет создать не удалось.");
                     }else{
                         listSubjects.add(subject);
-                        savingFile.saveSubjects(listSubjects);
+                        inclusive.saveSubjects(listSubjects);
                         System.out.println("Добавлен новый предмет.");
                     }               
                     break;  
@@ -80,13 +80,13 @@ public class App {
                         System.out.println("Не удалось выставить оценку.");
                     }else{
                         listJournals.add(journal);
-                        savingFile.saveJournals(listJournals);
+                        inclusive.saveJournals(listJournals);
                         System.out.println("Оценка выставлена.");
                     }                
                     break;
                 case "4":
                     journalBuilding.changeJournal(listJournals);
-                    savingFile.saveJournals(listJournals);
+                    inclusive.saveJournals(listJournals);
                     //System.out.println("Оценка исправлена.");
                     break;
                 case "5":
