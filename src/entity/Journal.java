@@ -7,7 +7,15 @@ package entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -16,11 +24,19 @@ import javax.persistence.Entity;
 @Entity
 public class Journal implements Serializable{
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @OneToOne
     private Person person;
+    @OneToOne
     private Subject subject;
+    @Basic()
+    @Column()
     private int grade;
+    @Temporal(TemporalType.TIMESTAMP)
     private Date date;
+    @Temporal(TemporalType.TIMESTAMP)
     private Date changedate;
     
     public Journal() {

@@ -20,56 +20,56 @@ import javax.persistence.Persistence;
  */
 public class SavingBase implements Inclusive{
     EntityManager em;
-    EntityTransaction et;
+    EntityTransaction tx;
     
      public SavingBase() {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("School");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("SchoolPU");
         this.em = emf.createEntityManager();
-        this.et = em.getTransaction();
+        this.tx = em.getTransaction();
     }
      
     @Override
     public void savePersons(List<Person> listPersons) {
         for(Person person : listPersons){
-            et.begin();
+            tx.begin();
                 em.persist(person);
-            et.commit();
+            tx.commit();
         } 
     }
     
     @Override
     public void saveSubjects(List<Subject> listSubjects) {
         for(Subject subject : listSubjects){
-            et.begin();
+            tx.begin();
                 em.persist(subject);
-            et.commit();
+            tx.commit();
         } 
     }
     
     @Override
     public void saveJournals(List<Journal> listJournals) {
         for(Journal journal : listJournals){
-            et.begin();
+            tx.begin();
                 em.persist(journal);
-            et.commit();
+            tx.commit();
         } 
     }
     
     @Override
     public List<Person> loadListPersons() {
-        return em.createQuery("SELECT prsn FROM Person prsn")
+        return em.createQuery("SELECT p FROM Person p")
                 .getResultList();
     }
 
     @Override
     public List<Subject> loadListSubjects() {
-        return em.createQuery("SELECT sbjct FROM Subject sbjct")
+        return em.createQuery("SELECT s FROM Subject s")
                 .getResultList();
     }
 
     @Override
     public List<Journal> loadListJournals() {
-        return em.createQuery("SELECT jrnl FROM Journal jrnl")
+        return em.createQuery("SELECT j FROM Journal j")
                 .getResultList();
     }
 }

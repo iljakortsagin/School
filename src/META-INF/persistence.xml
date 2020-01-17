@@ -6,7 +6,7 @@
     <class>entity.Person</class>
     <class>entity.Subject</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/school?zeroDateTimeBehavior=convertToNull&amp;characterEncoding=utf8&amp;useUnicode=true "/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/school?zeroDateTimeBehavior=convertToNull&amp;characterEncoding=utf8&amp;useUnicode=true"/>
       <property name="javax.persistence.jdbc.user" value="school"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
       <property name="javax.persistence.jdbc.password" value="school"/>

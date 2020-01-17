@@ -23,8 +23,8 @@ public class Person implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Basic()
-    @Column()
+    //@Basic()
+    //@Column()
     private String firstname;
     private String lastname;
     private String status;
